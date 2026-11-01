@@ -32,7 +32,7 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"></noscript>
 
-  <link rel="stylesheet" href="style.css?v=gbbd-price-20261031b">
+  <link rel="stylesheet" href="style.css?v=gbbd-pay-20261101d">
 
   <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -215,6 +215,18 @@
       <div class="hero-actions">
         <a class="primary hero-dept dept-cloth" href="#clothingPage" data-no-i18n><span aria-hidden="true">👕</span> পোশাক</a>
         <a class="primary hero-dept dept-gadget" href="#gadgetPage" data-no-i18n><span aria-hidden="true">🎧</span> গ্যাজেট</a>
+        <div class="search-hero" aria-label="Search products">
+          <div class="search-box">
+            <svg class="ic" aria-hidden="true"><use href="#i-search"/></svg>
+            <input id="topSearch" type="search" placeholder="Search shirt, polo, earbuds, charger..." autocomplete="off" enterkeyhint="search" aria-label="Search products">
+            <button id="topSearchClear" class="search-clear hidden" type="button" aria-label="Clear search">&times;</button>
+            <div id="searchSuggest" class="search-suggest hidden" role="listbox"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sh-row" data-no-i18n>
+        <span class="sh-tg" role="group" aria-label="Language"><button type="button" data-lang-btn="en" onclick="gbSetLang('en')">English Search 🔍</button><button type="button" data-lang-btn="bn" onclick="gbSetLang('bn')">বাংলা খুঁজুন 🔍</button></span>
+        <button type="button" class="sh-cat" onclick="goToResults()"><span aria-hidden="true">📖</span> Catalogue দেখাও <em id="shCount" class="hidden"></em></button>
       </div>
       <div class="hero-saved-actions" aria-label="Quick saved shopping tools">
         <button type="button" onclick="showSavedProducts('wishlist')">♡ Wishlist <span id="wishlistHeroCount">0</span></button>
@@ -225,15 +237,6 @@
 
   </section>
 
-  <!-- SEARCH -->
-  <section class="search-hero" data-v="home" aria-label="Search products">
-    <div class="search-box">
-      <svg class="ic" aria-hidden="true"><use href="#i-search"/></svg>
-      <input id="topSearch" type="search" placeholder="Search shirt, polo, earbuds, charger..." autocomplete="off" enterkeyhint="search" aria-label="Search products">
-      <button id="topSearchClear" class="search-clear hidden" type="button" aria-label="Clear search">&times;</button>
-      <div id="searchSuggest" class="search-suggest hidden" role="listbox"></div>
-    </div>
-  </section>
 
   <a class="flash-bar needs-flash hidden" data-v="home" href="#flashSale" aria-label="Flash sale"><span class="fb-l"><svg class="ic" aria-hidden="true"><use href="#i-bolt"/></svg> ফ্ল্যাশ সেল চলছে</span><b id="flashBarTime" data-sale-end="0">00:00:00</b><span class="fb-r">দেখুন ›</span></a>
 
@@ -630,28 +633,25 @@
 
       <div class="payment-options">
 
-        <label class="pay-option">
+        <label class="pay-option pm-cod">
           <input type="radio" name="payment" value="Cash on Delivery" checked>
-          <span>
-            <svg class="ic" aria-hidden="true"><use href="#i-cash"/></svg> Cash on Delivery
-            <small>Pay when your order arrives.</small>
-          </span>
+          <i class="pay-logo" aria-hidden="true"></i>
+          <span class="pay-txt"><b>Cash on Delivery</b><small>Pay when your order arrives.</small></span>
+          <i class="pay-ring" aria-hidden="true"></i>
         </label>
 
-        <label class="pay-option">
+        <label class="pay-option pm-bkash">
           <input type="radio" name="payment" value="bKash (manual)">
-          <span>
-            <svg class="ic" aria-hidden="true"><use href="#i-mobile"/></svg> bKash
-            <small>Send the amount to the number shown, then add the transaction ID below.</small>
-          </span>
+          <i class="pay-logo" aria-hidden="true"></i>
+          <span class="pay-txt"><b>bKash</b><small>Send the amount to the number shown, then add the transaction ID below.</small></span>
+          <i class="pay-ring" aria-hidden="true"></i>
         </label>
 
-        <label class="pay-option">
+        <label class="pay-option pm-nagad">
           <input type="radio" name="payment" value="Nagad (manual)">
-          <span>
-            <svg class="ic" aria-hidden="true"><use href="#i-mobile"/></svg> Nagad
-            <small>Send the amount to the number shown, then add the transaction ID below.</small>
-          </span>
+          <i class="pay-logo" aria-hidden="true"></i>
+          <span class="pay-txt"><b>Nagad</b><small>Send the amount to the number shown, then add the transaction ID below.</small></span>
+          <i class="pay-ring" aria-hidden="true"></i>
         </label>
 
       </div>
@@ -771,8 +771,8 @@
 </footer>
 
 
-<script defer src="script.js?v=gbbd-price-20261031b"></script>
-<script defer src="i18n.js?v=gbbd-price-20261031b"></script>
+<script defer src="script.js?v=gbbd-pay-20261101d"></script>
+<script defer src="i18n.js?v=gbbd-pay-20261101d"></script>
 
 </body>
 </html>
