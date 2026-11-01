@@ -32,7 +32,7 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"></noscript>
 
-  <link rel="stylesheet" href="style.css?v=gbbd-pay-20261101d">
+  <link rel="stylesheet" href="style.css?v=gbbd-pay-20261101e">
 
   <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -220,13 +220,10 @@
             <svg class="ic" aria-hidden="true"><use href="#i-search"/></svg>
             <input id="topSearch" type="search" placeholder="Search shirt, polo, earbuds, charger..." autocomplete="off" enterkeyhint="search" aria-label="Search products">
             <button id="topSearchClear" class="search-clear hidden" type="button" aria-label="Clear search">&times;</button>
+            <button id="shFilterBtn" class="sh-filter" type="button" aria-label="Filter" onclick="openFilter()"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg><i class="sh-dot"></i></button>
             <div id="searchSuggest" class="search-suggest hidden" role="listbox"></div>
           </div>
         </div>
-      </div>
-      <div class="sh-row" data-no-i18n>
-        <span class="sh-tg" role="group" aria-label="Language"><button type="button" data-lang-btn="en" onclick="gbSetLang('en')">English Search 🔍</button><button type="button" data-lang-btn="bn" onclick="gbSetLang('bn')">বাংলা খুঁজুন 🔍</button></span>
-        <button type="button" class="sh-cat" onclick="goToResults()"><span aria-hidden="true">📖</span> Catalogue দেখাও <em id="shCount" class="hidden"></em></button>
       </div>
       <div class="hero-saved-actions" aria-label="Quick saved shopping tools">
         <button type="button" onclick="showSavedProducts('wishlist')">♡ Wishlist <span id="wishlistHeroCount">0</span></button>
@@ -771,8 +768,24 @@
 </footer>
 
 
-<script defer src="script.js?v=gbbd-pay-20261101d"></script>
-<script defer src="i18n.js?v=gbbd-pay-20261101d"></script>
+<script defer src="script.js?v=gbbd-pay-20261101e"></script>
+<script defer src="i18n.js?v=gbbd-pay-20261101e"></script>
 
+
+<!-- FILTER SHEET -->
+<div id="filterSheet" class="fs" aria-hidden="true" data-no-i18n>
+  <div class="fs-back" onclick="closeFilter()"></div>
+  <div class="fs-card" role="dialog" aria-label="Advanced Filter">
+    <i class="fs-grab"></i>
+    <div class="fs-head"><span>Advanced Filter</span><button type="button" onclick="closeFilter()" aria-label="Close">&times;</button></div>
+    <h5>Department (ক্যাটাগরি)</h5>
+    <div class="fs-chips" id="fsDept"><button type="button" data-d="all" class="on">সব</button><button type="button" data-d="clothing">👕 পোশাক</button><button type="button" data-d="gadget">🎧 গ্যাজেট</button></div>
+    <h5>Price Range (৳)</h5>
+    <div class="fs-price"><input id="fsMin" type="number" inputmode="numeric" min="0" placeholder="Min ৳0"><span>–</span><input id="fsMax" type="number" inputmode="numeric" min="0" placeholder="Max ৳"></div>
+    <h5>Sort By</h5>
+    <select id="fsSort"><option value="featured">Featured</option><option value="low">Price: Low to High</option><option value="high">Price: High to Low</option></select>
+    <div class="fs-act"><button type="button" class="fs-reset" onclick="resetFilter()">↺ রিসেট</button><button type="button" class="fs-apply" onclick="applyFilter()">✓ ফিল্টার প্রয়োগ করুন</button></div>
+  </div>
+</div>
 </body>
 </html>
