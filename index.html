@@ -32,7 +32,7 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"></noscript>
 
-  <link rel="stylesheet" href="style.css?v=set-20261103d">
+  <link rel="stylesheet" href="style.css?v=pay-20261104a">
 
   <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -633,21 +633,21 @@
         <label class="pay-option pm-cod">
           <input type="radio" name="payment" value="Cash on Delivery" checked>
           <i class="pay-logo" aria-hidden="true"></i>
-          <span class="pay-txt"><b>Cash on Delivery</b><small>Pay when your order arrives.</small></span>
+          <span class="pay-txt"><b>Cash on Delivery</b><small data-no-i18n>অর্ডার হাতে পেয়ে টাকা দিন।</small></span>
           <i class="pay-ring" aria-hidden="true"></i>
         </label>
 
         <label class="pay-option pm-bkash">
           <input type="radio" name="payment" value="bKash (manual)">
           <i class="pay-logo" aria-hidden="true"></i>
-          <span class="pay-txt"><b>bKash</b><small>Send the amount to the number shown, then add the transaction ID below.</small></span>
+          <span class="pay-txt"><b>bKash</b><small data-no-i18n>দেখানো নম্বরে টাকা পাঠিয়ে নিচে ট্রানজেকশন আইডি দিন।</small></span>
           <i class="pay-ring" aria-hidden="true"></i>
         </label>
 
         <label class="pay-option pm-nagad">
           <input type="radio" name="payment" value="Nagad (manual)">
           <i class="pay-logo" aria-hidden="true"></i>
-          <span class="pay-txt"><b>Nagad</b><small>Send the amount to the number shown, then add the transaction ID below.</small></span>
+          <span class="pay-txt"><b>Nagad</b><small data-no-i18n>দেখানো নম্বরে টাকা পাঠিয়ে নিচে ট্রানজেকশন আইডি দিন।</small></span>
           <i class="pay-ring" aria-hidden="true"></i>
         </label>
 
@@ -664,13 +664,12 @@
       <div id="transactionBox" class="hidden">
 
         <label>
-          Transaction ID
-          <input name="transactionId" maxlength="40" placeholder="Enter transaction ID">
+          <span data-no-i18n>ট্রানজেকশন আইডি</span>
+          <input name="transactionId" maxlength="40" placeholder="ট্রানজেকশন আইডি লিখুন" data-no-i18n>
         </label>
 
-        <p class="payment-note">
-          Send the full payable amount to the number shown above, then enter the Transaction ID here.
-          We never ask for your PIN, OTP or CVV.
+        <p class="payment-note" data-no-i18n>
+          উপরে দেখানো নম্বরে সম্পূর্ণ টাকা পাঠিয়ে এখানে ট্রানজেকশন আইডি দিন। আমরা কখনোই আপনার PIN, OTP বা CVV চাই না।
         </p>
 
       </div>
@@ -775,8 +774,8 @@
 </footer>
 
 
-<script defer src="script.js?v=set-20261103d"></script>
-<script defer src="i18n.js?v=set-20261103d"></script>
+<script defer src="script.js?v=pay-20261104a"></script>
+<script defer src="i18n.js?v=pay-20261104a"></script>
 
 
 <!-- FILTER SHEET -->
