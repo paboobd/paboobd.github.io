@@ -32,7 +32,7 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"></noscript>
 
-  <link rel="stylesheet" href="style.css?v=pay-20261113b">
+  <link rel="stylesheet" href="style.css?v=pay-20261113c">
 
   <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -576,12 +576,12 @@
 
       <label>
         Full Name *
-        <input name="name" required maxlength="80" placeholder="Your full name">
+        <input name="name" required maxlength="80" placeholder="Your full name" autocomplete="name">
       </label>
 
       <label>
         Phone Number *
-        <input name="phone" required inputmode="tel" maxlength="20" placeholder="01XXXXXXXXX">
+        <input name="phone" type="tel" required inputmode="tel" maxlength="20" placeholder="01XXXXXXXXX" autocomplete="tel">
       <small class="field-note">If you do not finish the order, we may contact you on this number to help.</small>
       </label>
 
@@ -598,7 +598,7 @@
         <label>
           Area / Upazila *
           <div class="search-select">
-            <input id="upazilaInput" name="area" required maxlength="70" placeholder="Select district first..." autocomplete="off" disabled>
+            <input id="upazilaInput" name="area" required maxlength="70" placeholder="Type upazila - district fills in by itself..." autocomplete="off">
             <div id="upazilaSuggestions" class="suggestions hidden"></div>
           </div>
         </label>
@@ -609,7 +609,7 @@
 
       <label>
         Full Address *
-        <textarea name="address" required maxlength="250" rows="3" placeholder="House, road, village / detailed address"></textarea>
+        <textarea name="address" required maxlength="250" rows="3" placeholder="House, road, village / detailed address" autocomplete="street-address"></textarea>
       </label>
 
       <label>
@@ -774,8 +774,8 @@
 </footer>
 
 
-<script defer src="script.js?v=pay-20261113b"></script>
-<script defer src="i18n.js?v=pay-20261113b"></script>
+<script defer src="script.js?v=pay-20261113c"></script>
+<script defer src="i18n.js?v=pay-20261113c"></script>
 
 
 <!-- FILTER SHEET -->
